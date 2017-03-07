@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var nunjucks = require('nunjucks');
 const app = express();
 
-const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+const people = [{name: 'Samir'}, {name: 'Julius'}, {name: 'Omri'}];
 
 app.set('view engine', 'html'); // have res.render work with html files
 app.engine('html', nunjucks.render); // when giving html files to res.render, tell it to use nunjucks

@@ -19,6 +19,9 @@
   "homepage": "https://github.com/samir8787/twitter-js#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "nodemon": "^1.11.0"
+    "lodash": "^4.17.4",
+    "morgan": "^1.8.1",
+    "nodemon": "^1.11.0",
+    "nunjucks": "^3.0.0"
   }
 }
