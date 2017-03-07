@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
+const socketio = require('socket.io');
 
 const app = express();
 
@@ -12,9 +13,11 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 nunjucks.configure('views', {noCache: true});
 
-app.listen(3000, function () {
+const server = app.listen(3000, function () {
   console.log('Im awake')
 });
+
+const io = socketio.listen(server);
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
