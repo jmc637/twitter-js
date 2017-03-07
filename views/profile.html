@@ -28,10 +28,12 @@
 
       <!-- display tweets here -->
       <h2>Your Tweets</h2>
+      <ul id="tweet_table">
       {% for tweet in tweets %}
         <li>{{tweet.content}}</li>
       {% endfor %}
-      
+      </ul>
+
     </div>
   </div>
     
