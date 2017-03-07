@@ -18,5 +18,5 @@ app.listen(3000, function () {
 
 
 app.use(morgan('tiny'));
-
+app.use(express.static('public'));
 app.use('/', routes);
