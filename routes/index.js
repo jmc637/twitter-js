@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 
+
 const tweetBank = require('../tweetBank');
 
 router.get('/', function (req, res) {
@@ -14,7 +15,13 @@ router.get('/users/:name', function(req, res) {
   var list = tweetBank.find({'name': name});
   console.log(list);
   console.log(tweetBank.list());
-  res.render( 'profile', {name:name, tweets: list});
+  res.render( 'profile', {name:name, tweets: list, showForm: true});
+});
+
+router.post('/tweets', function (req, res) {
+  tweetBank.add(req.body.name, req.body.text);
+  res.redirect('/')
+
 });
 
 router.get('/tweet/:id', function(req, res) {

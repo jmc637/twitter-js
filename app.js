@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 const routes = require('./routes');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -15,8 +16,8 @@ app.listen(3000, function () {
   console.log('Im awake')
 });
 
-
-
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.use(morgan('tiny'));
 app.use(express.static('public'));
 app.use('/', routes);
